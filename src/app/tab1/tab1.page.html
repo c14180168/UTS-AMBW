@@ -12,6 +12,21 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  
+  <ion-input placeholder="Judul" [(ngModel)]="Judul"></ion-input>
+  <ion-input placeholder="Isi" [(ngModel)]="Isi"></ion-input>
+  <ion-input placeholder="Nilai" [(ngModel)]="Nilai"></ion-input>
+  <ion-button (click)='simpan()'>Simpan</ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let isiFoto of fotoService.dataFoto; index as position">
+        <ion-img [src]="isiFoto.webviewPath" (click)="getNama(isiFoto)"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="TambahFoto()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

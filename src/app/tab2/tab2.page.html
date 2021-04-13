@@ -13,5 +13,12 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <ion-list>
+    <ion-item *ngFor="let data of isiData | async">
+      <h1>{{data.judul}}</h1><br>
+      <ion-button slot="end" (click)="toDetail(data.judul)">Detail</ion-button>
+      <ion-button slot="end" (click)="hapus(data.judul)">Hapus</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
