@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -22,8 +22,8 @@ export class Tab2Page {
   }
 
   toDetail(doc:string){
-    this.router.navigate(['detail',doc])
-    // this.router.navigateByUrl(`detail/${doc}`);
+    this.router.navigate([`detail/${doc}`])
+    
   }
 
   hapus(doc:string){
